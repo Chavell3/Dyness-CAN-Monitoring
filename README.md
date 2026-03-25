@@ -1,7 +1,6 @@
 Monitoring-Pipeline
 
 1. dyness_monitor.sh
-Pfad: dyness_monitor.sh
 Größe: 3.0 KB
 Zweck: Orchestriert die komplette Monitoring-Pipeline
 Was es tut:
@@ -14,7 +13,6 @@ Räumt alte Dateien auf (max. 20 CSV-Dateien)
 Loggt alle Schritte nach /var/log/dyness_monitor.log
 
 2. decode_dyness.py
-Pfad: decode_dyness.py
 Größe: 27 KB
 Zweck: Parsed CAN-Bus-Daten der Dyness Tower T7 Batterie
 Was es tut:
@@ -29,7 +27,6 @@ dyness_temps.csv: Timestamp, Tower, Reading, Temp_degC
 dyness_pile.csv: Timestamp, Voltage_V, Current_A, BMS_Temp_C, SOC_pct, SOH_pct
 
 3. import_dyness_to_influx.py
-Pfad: import_dyness_to_influx.py
 Größe: 6.6 KB
 Zweck: Importiert CSV-Daten in InfluxDB v2.x
 Was es tut:
@@ -39,3 +36,6 @@ Importiert dyness_temps.csv → Measurement: dyness_temps
 Importiert dyness_pile.csv → Measurement: dyness_pile
 Batch-Import mit 1000 Datenpunkten pro Request
 Verwendet Line Protocol Format
+
+4. Dyness Battery Monitor - Tower_grafana.json
+Exportiertes Grafana Dashboard
